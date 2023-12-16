@@ -4,46 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HMS Home Page</title>
+    <title>IMS Home Page</title>
     <link>
 </head>
 <body>
 <?php
-include("include/header.php");
-?>
+            include("include/header.php");
+            include("include/connect.php")
+        ?>
 
-<div style="margin-top:50px"></div>
-<div class="container">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-3 mx-1 shadow">
-            <img src="images/more.png" style="width:100%; height:150px;">
-            <h5 class="text-center">Click on the button for more information..</h5>
-            <a href="#">
-            <button class="btn btn-success my-3" style="margin-left: 30%;">More</button>
-            </a>
-
-            
-            </div>
-            <div class="col-md-3 mx-1 shadow">
-            <img src="images/patient.jpeg" style="width:100%;">
-            <h5 class="text-center">Create account so that we can good care of you.</h5>
-            <a href="#">
-            <button class="btn btn-success my-3" style="margin-left: 30%;">Create Account</button>
-            </a>
-
-            </div>
-            <div class="col-md-3 mx-1 shadow">
-            <img src="images/doctor.jpeg" style="width:100%;">
-            <h5 class="text-center">We are employing for doctors</h5>
-            <a href="#">
-            <button class="btn btn-success my-3" style="margin-left: 30%;">Apply now!!!!</button>
-            </a>
-            
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2" style="margin-left:-30px;">
+                    <?php
+                        include("include/sidenav.php");
+                    ?>
+                </div>
+                <div class="col-md-10">
+                        <h5 class="text-center my-2"></h5>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>
 

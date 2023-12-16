@@ -27,53 +27,68 @@ if(count($error)==0){
 }
 ?>
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Admin Login  Page</title>
-    </head>
-    <body style="background-image: url([images/hospital.jpeg); background-repeat:no-repeat; background-size:cover;">
-        <?php
-        include("include/header.php");
-        ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('images/cse.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .jumbotron {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <?php include("include/header.php"); ?>
 
-        <div style="margin-top: 30px;"></div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6 jumbotron shadow">
-                        <img src="images/admin.jpeg" class="col-md-2" height="70px" width="500px">
-
-                        <form method="post" class="my-2">
-                            <div>
-                                <?php
-                                if(isset($error["admin"])){
-                                    $sh=$error['admin'];
-                                    $show="<h4  class='alert alert-danger'>$sh</h4>";
-                                   // echo $show;
-                                }
-                                else{
-                                    $show="";
-                                }
-                              echo $show;
-                                ?>
-                            </div>
-                            <div class="form-group">
-                            <label>Username</label>
-                            <input type="text"  name="uname" class="form-control" autocomplete="off" placeholder="Enter Username">
-                            </div>
-                            
-                            <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name="pass" class="form-control" placeholder="Enter Password">
-                            </div>
-
-                            <input type="submit" name="login" class="btn btn-success" value="login">
-                        </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="jumbotron shadow">
+                    <div class="text-center">
+                        <img src="images/admin.jpeg" class="img-fluid" alt="Admin Image">
                     </div>
-                    <div></div>
+                    
+                    <form method="post" class="my-2">
+                        <div>
+                            <?php
+                                if(isset($error["admin"])){
+                                    $sh = $error['admin'];
+                                    $show = "<h4 class='alert alert-danger'>$sh</h4>";
+                                    echo $show;
+                                } else {
+                                    $show = "";
+                                }
+                            ?>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="uname">Username</label>
+                            <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="Enter Username" value="<?php if(isset($_POST['uname'])) echo $_POST['uname'];?>">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" name="pass" class="form-control" placeholder="Enter Password">
+                        </div>
+
+                        <input type="submit" name="login" class="btn btn-success btn-block" value="Login">
+                    </form>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

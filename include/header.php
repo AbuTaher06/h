@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,31 +17,47 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-info bg-info">
-        <h5 class="text-white">Hospital Management System</h5>
+        <img src="../images/jkkniu.png" height="50px" alt="" class="mx-1">
+        <img src="include/jkkniu.png" height="50px" alt="" class="mx-1">
+        
+
+        <h5 class="text-white"><a href="index.php" style="text-decoration: none; color: white;">Improvement Management System</a></h5>
     <div class="mr-auto"></div>
 
     <ul class="navbar nav">
         <!-- <li class="nav-item"><a href="#" class="nav-link text-white">Admin</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-white">Doctor</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Patient</a></li> -->
+        <li class="nav-item"><a href="#" class="nav-link text-white">student</a></li> -->
         <?php
-if(isset($_SESSION['admin'])){
-    $user=$_SESSION['admin'];
+if (isset($_SESSION['admin'])) {
+    $user = $_SESSION['admin'];
     echo '
     <li class="nav-item"><a href="#" class="nav-link text-white">'.$user.'</a></li>
-        <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li> 
-        ';
-}
-    else{
-        echo '
-        <li class="nav-item"><a href="adminLogin.php" class="nav-link text-white">Admin</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Doctor</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white">Patient</a></li>
-        ';
+    <li class="nav-item"><a href="../admin/logout.php" class="nav-link text-white"><i class="fas fa-sign-out-alt"></i> Logout</a></li> 
+    ';
+} elseif (isset($_SESSION['doctor'])) {
+    $user = $_SESSION['doctor'];
+    echo '
+    <li class="nav-item"><a href="#" class="nav-link text-white">'.$user.'</a></li>
+    <li class="nav-item"><a href="../doctor/logout.php" class="nav-link text-white"><i class="fas fa-sign-out-alt"></i> Logout</a></li> 
+    ';
+} elseif (isset($_SESSION['student'])) {
+    $user = $_SESSION['student'];
+    echo '
+    <li class="nav-item"><a href="#" class="nav-link text-white">'.$user.'</a></li>
+    <li class="nav-item"><a href="../student/logout.php" class="nav-link text-white"><i class="fas fa-sign-out-alt"></i> Logout</a></li> 
+    ';
+} else {
+    echo '
+    <li class="nav-item"><a href="index.php" class="nav-link text-white">Home</a></li> ';
+    // <li class="nav-item"><a href="adminLogin.php" class="nav-link text-white">Admin</a></li>
+    // <li class="nav-item"><a href="doctorLogin.php" class="nav-link text-white">Doctor</a></li>
+    // <li class="nav-item"><a href="studentlogin.php" class="nav-link text-white">Student</a></li>
+    
     
 }
+?>
 
-        ?>
     </ul>
     </nav>
 </body>

@@ -27,7 +27,7 @@ if (isset($_POST['admin_id'])) {
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-2" style="margin-left: -30px;">
+                <div class="col-md-2" style="margin-left:-30px;">
                     <?php
                     include("sidenav.php");
                     ?>
